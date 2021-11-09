@@ -21,12 +21,14 @@ class TodoController extends Controller
         $form = $request->all();
         unset($form['_token_']);
         $todo->fill($form)->save();
-        return redirect('/');
+        return redirect('/',[
+            'todos' => $todos,
+        ]);
 
         $validate_rule = [
             'content'=>'required|max:255',
         ];
-
+        
     }
     public function update(Request $request, $id)
     {
