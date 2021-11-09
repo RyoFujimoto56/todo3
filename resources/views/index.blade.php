@@ -272,10 +272,7 @@
                                    <button class="button-delate">削除</button>
                                 </form>
                             </td>
-                        </tr>
-
-                        @section('content')
-                        
+                        </tr>  
                         @foreach ($todos as $todo)
                      <tr>
                           <td>{{$todo -> screated_at}}</td>
@@ -295,7 +292,6 @@
                             </td>
                      </tr>
                         @endforeach
-                        @endsection
                     </tbody>
                 </table>
             </div>
