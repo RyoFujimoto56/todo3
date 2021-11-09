@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Todo;
+use App\Models\Todo;
 
 class TodoController extends Controller
 {
     public function index()
     {
-        return view('/index');
+        $todos = Todo::all();
+        return view('/index',['todos' => $todos]);
     }
     public function create(Request $request)
     {
@@ -17,13 +18,13 @@ class TodoController extends Controller
         'created_at' -> $request -> newcreated_at;
         'content'   -> $request -> newcontent;
 
+        $todos = ['created_at','content'];
+
         $todo = new Todo;
         $form = $request->all();
         unset($form['_token_']);
         $todo->fill($form)->save();
-        return redirect('/',[
-            'todos' => $todos,
-        ]);
+        return redirect('/index');
 
         $validate_rule = [
             'content'=>'required|max:255',
@@ -36,14 +37,14 @@ class TodoController extends Controller
         $form = $request->all();
         unset($form['_token']);
         Author::where('id', $request->id)->update($form);
-        return redirect('/');
+        return redirect('/index');
     }
     public function delete($id)
     {
-        $author = Todo::find($request->id);
-        return view('delete', ['form' => $author]);
+        $todo = Todo::find($request->id);
+        return view('delete', ['form' => $todo]);
 
         Todo::find($request->id)->delete();
-        return redirect('/');
+        return redirect('/index');
     }
 }

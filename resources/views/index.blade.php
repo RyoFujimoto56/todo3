@@ -278,7 +278,7 @@
                         
                         @foreach ($todos as $todo)
                      <tr>
-                          <td>{{$todo -> $created_at}}</td>
+                          <td>{{$todo -> screated_at}}</td>
                           <form action="http://young-woodland-12937.herokuapp.com/todo/update?id=12624" method="post"></form>
                             <input type="hidden" name="_token" value="iIVCwBcvpbolgoAFn1JDlhvyzf9u6oyEtdU5a3a9">
                             <td>
@@ -294,7 +294,7 @@
                                 </form>
                             </td>
                      </tr>
-                     @endforeach
+                        @endforeach
                         @endsection
                     </tbody>
                 </table>
