@@ -276,7 +276,7 @@
 
                         @section('content')
                         
-                        @forreach ($todos as $todo)
+                        @foreach ($todos as $todo)
                      <tr>
                           <td>{{$todo -> $created_at}}</td>
                           <form action="http://young-woodland-12937.herokuapp.com/todo/update?id=12624" method="post"></form>
@@ -294,7 +294,7 @@
                                 </form>
                             </td>
                      </tr>
-                     @endforreach
+                     @endforeach
                         @endsection
                     </tbody>
                 </table>
