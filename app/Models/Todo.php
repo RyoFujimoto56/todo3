@@ -10,7 +10,6 @@ use App\Http\Controllers\TodoController;
 class Todo extends Model
 {
     use HasFactory;
-
     protected $fillable = ['created_at','content'];
 
 }
