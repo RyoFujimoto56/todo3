@@ -275,18 +275,18 @@
                         @foreach ($todos as $todo)
                      <tr>
                           <td>{{$todo->created_at}}</td>
-                          <form action="http://young-woodland-12937.herokuapp.com/todo/update?id=12624" method="post"></form>
-                            <input type="hidden" name="_token" value="iIVCwBcvpbolgoAFn1JDlhvyzf9u6oyEtdU5a3a9">
+                          　<form action="/todo/update" method="post">
+                               @csrf
+                               <td>
+                                　 <input type="text" class="input-update" value="{{$todo->content}}" name="content">
+                            　　</td>
+                            　　<td>
+                                　 <button class="button-update">更新</button>
+                            　　</td>
+                            </form>
                             <td>
-                                <input type="text" class="input-update" value="{{$todo->content}}" name="content">
-                            </td>
-                            <td>
-                                <button class="button-update">更新</button>
-                            </td>
-                            <td>
-                                <form action="http://young-woodland-12937.herokuapp.com/todo/delate?id=12624" method="post">
+                                <form action="/todo/delete" method="post">
                                     @csrf
-                                   <input type="hidden" name="_token" value="iIVCwBcvpbolgoAFn1JDlhvyzf9u6oyEtdU5a3a9">
                                    <button class="button-delate">削除</button>
                                 </form>
                             </td>
