@@ -244,7 +244,6 @@
             <div class="todo">
                 <form action="/todo/create" method="post" class="flex between mb-30">
                 @csrf
-                   <input type="hidden" name="_token" value="">
                    <input type="text" class="input-add" name="content">
                    <input class="button-add" type="submit" value="追加">
                 </form>
@@ -286,6 +285,7 @@
                             </td>
                             <td>
                                 <form action="http://young-woodland-12937.herokuapp.com/todo/delate?id=12624" method="post">
+                                    @csrf
                                    <input type="hidden" name="_token" value="iIVCwBcvpbolgoAFn1JDlhvyzf9u6oyEtdU5a3a9">
                                    <button class="button-delate">削除</button>
                                 </form>

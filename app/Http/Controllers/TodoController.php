@@ -14,30 +14,21 @@ class TodoController extends Controller
     }
     public function create(Request $request)
     {
-        //DBに保存
-        'created_at' -> $request -> newcreated_at;
-        'content'   -> $request -> newcontent;
-
-        $todos = ['created_at','content'];
-
         $todo = new Todo;
         $form = $request->all();
         unset($form['_token_']);
         $todo->fill($form)->save();
-        return redirect('/index');
+        return redirect('/');
 
-        $validate_rule = [
-            'content'=>'required|max:255',
-        ];
-        
+
     }
     public function update(Request $request, $id)
     {
         $this->validate($request, Todo::$rules);
         $form = $request->all();
         unset($form['_token']);
-        Author::where('id', $request->id)->update($form);
-        return redirect('/index');
+        Todo::where('id', $request->id)->update($form);
+        return redirect('/');
     }
     public function delete($id)
     {
@@ -45,6 +36,6 @@ class TodoController extends Controller
         return view('delete', ['form' => $todo]);
 
         Todo::find($request->id)->delete();
-        return redirect('/index');
+        return redirect('/');
     }
 }
