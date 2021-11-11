@@ -276,10 +276,11 @@
                            <form action="/todo/update" method="post">
                                @csrf
                                <td>
-                                 <input type="text" class="input-update" value="{{$todo->content}}" name="content">
+                                  <input type="hidden" value="{{$todo->id}}"  name="id">
+                                  <input type="text" class="input-update" value="{{$todo->content}}" name="content">
                                </td>
                                <td>
-                                 <button class="button-update">更新</button>
+                                   <button class="button-update">更新</button>
                                </td>
                             </form>
                             <td>
