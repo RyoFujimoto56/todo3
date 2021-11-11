@@ -258,7 +258,6 @@
                         <tr>
                             <td>2021-10-26 15:22:30</td>
                             <form action="http://young-woodland-12937.herokuapp.com/todo/update?id=12624" method="post"></form>
-                            <input type="hidden" name="_token" value="iIVCwBcvpbolgoAFn1JDlhvyzf9u6oyEtdU5a3a9">
                             <td>
                                 <input type="text" class="input-update" value="bbb111" name="content">
                             </td>
@@ -267,7 +266,6 @@
                             </td>
                             <td>
                                 <form action="http://young-woodland-12937.herokuapp.com/todo/delate?id=12624" method="post">
-                                   <input type="hidden" name="_token" value="iIVCwBcvpbolgoAFn1JDlhvyzf9u6oyEtdU5a3a9">
                                    <button class="button-delate">削除</button>
                                 </form>
                             </td>
