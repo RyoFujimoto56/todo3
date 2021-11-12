@@ -272,7 +272,7 @@
                         </tr>  
                         @foreach ($todos as $todo)
                      <tr>
-                          <td>{{$todo->created_at}}</td>
+                          <td>{{$todo->updated_at}}</td>
                            <form action="/todo/update" method="post">
                                @csrf
                                <td>
